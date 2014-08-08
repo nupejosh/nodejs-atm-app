@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	h1 Welcome to your everyday Internet ATM 
+		p The pin takes four digits and you must submit one. We value security here. 
+		p Your account has a starting balance of $100.00 
+		p #{error_message}
+		form(method='post', action='/statement')
+			|	Pin: 
+			input(type='text', name='pin')
+			|	Withdraw:
+			input(type='text', name='withdraw')
+			|	Deposit:
+			input(type='text', name='deposit') 
+			input(type='submit', value='send')
